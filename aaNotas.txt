@@ -1,0 +1,30 @@
+NOTAS:
+-Ejecutado sobre terminal con  Ruby 1.9 por lo que "requiere" es "requiere_relative".
+
+-Hecho en linux, por lo que la carpeta de noticias tiene 3 archivos mas "." , ".." y 
+".directory" que crea en todas las carpetas.
+
+-Algunos errores encontrados en las comparaciones de Strings vienen dados a que el
+formato de alguno de los textos dados tiene diferente codificación y al crear la 
+noticia no consigo saltar todas las diferencias.
+
+-Acceso rápido a la "normalizacion" ya que esta en un "Hash".
+
+-La herencia está hecha desde "Noticia.rb" a "NoticiaCorta.rb", ya que he opino que lo
+que diferencia a NoticiaCorta de Noticia es el "enlace", por lo que NoticiaCorta es una
+epecialización de Noticia.
+
+-Para comprobar si es una NoticiaCorta llamo a un metodo de esta clase con un begin/rescue
+(try/catch) por lo que si puede hacerlo es una NoticiaCorta y si no puede no dará error ya
+que estoy llamandolo y "controlando" el error.
+
+-Los métodos de "Operaciones" son extensibles (los que hacen las búsquedas ),
+reciben  una lista de Noticias (y NoticiasCortas) junto con el parámetro de búsqueda y 
+devuelven otra lista de Noticias, por lo que, a esta otra lista se le puede pasar a otro 
+método para hacer búsquedas más concretas. 
+En cambio en el "Main" los metodos son para mostrar por pantalla con el formato correspondiente.
+
+-Para agrupar noticias comparo cada noticia con el resto (comparo solo con el titulo, ya que 
+al existir noticias cortas incluir el contenido implicaria mucha diferencia de palabras), las 
+que me devuelve (junto con la noticia que compara) las borro del grupo de noticias original y
+cojo la siguiente noticia y la comparo con el resto, etc etc.
